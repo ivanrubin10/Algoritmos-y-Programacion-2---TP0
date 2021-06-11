@@ -2,7 +2,7 @@
 Universidad de Buenos Aires
 Facultad de Ingenieria
 
-Algoritmos y Programación II - Trabajo Practico N°0 
+Algoritmos y Programación II - Trabajo Practico N°0
 
 Integrantes:
 Berard, Lucıa Magdalena		101213  lberard@fi.uba.ar
@@ -13,12 +13,12 @@ Sandoval, Diego Ariel		101639  dsandoval@fi.uba.ar
 #include<iostream>
 #include<string>
 using namespace std;
-
+/*
 #ifndef BIGNUM_INCLUDED
 #define BIGNUM_INCLUDED
 
-#define ASCII_FIX 48
-
+#define ASCII_FIX 48*/
+/*
 class bignum
 {
   private:
@@ -52,6 +52,27 @@ class bignum
     friend std::ostream& operator<<(std::ostream&, const bignum&);
     friend std::istream& operator>>(std::istream&, bignum&);
 };
+*/
+class suma5{
+private:
+  int operacion;
 
+public:
+  suma5(int & x){
+    operacion = x + 5;
+  }
+  istream& operator>>(istream& is, suma5& num)
+  {
+    string s;
+    is >> s;
+    while(!(s.find_first_not_of( "0123456789" ) == string::npos) && (s[0]!='-' && s[0]!='+'))
+    {
+      cerr << "El valor ingresado no es correcto. Intente nuevamente." << endl;
+      is >> s;
+    }
+    num = s;
+    return is;
+  }
+};
 
-#endif
+//#endif

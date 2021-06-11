@@ -5,19 +5,19 @@ LDLFLAGS=-lm
 GREEN= \e[92m
 NORMAL= \e[0m 
 
-all: 
+all:
 	@echo "$(GREEN)Compilando ...$(NORMAL)"
 	$(MAKE) tp0
 	@echo "$(GREEN)Terminó$(NORMAL)"
 
 cmdline.o: cmdline.cpp cmdline.h
 	$(CC) $(FLAGS) cmdline.o
-	
+
 bignum.o: bignum.cpp bignum.h
 	$(CC) $(FLAGS) bignumm.0
 
 tp0: cmdline.cpp bignum.cpp tp0.cpp
-	$(CC) $(FLAGS) $^ -o tp0 
+	$(CC) $(FLAGS) $^ -o tp0
 
 clean:
 	@echo "$(GREEN)Limpiando ...$(NORMAL)"
